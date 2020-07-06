@@ -1,6 +1,6 @@
 ---
 - name: "PLAY 1: Capture and store vrf config"
-  hosts: test
+  hosts: 100.120.1.7
   connection: network_cli
   tasks:
     - name: "TASK 1: GET vrf config from routers"
