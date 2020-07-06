@@ -1,0 +1,20 @@
+---
+- name: "PLAY 1: Capture and store vrf config"
+  hosts: test
+  connection: network_cli
+  tasks:
+    - name: "TASK 1: GET vrf config from routers"
+        ios_command: "show running-config | section vrf definition"
+      register: cli_result
+    - name: "TASK 2: print vrf output"
+        debug:
+          msg: "{{cli_result}}"
+    - name: "TASK 3: Create output/folder"
+        file:
+          path: "output"
+          state: directory
+          run_once: true
+    - name: "TASK 4: write output to file"
+        copy:
+          content: "{{cli_result.stdout[0]}}\n"
+          dest: "output/{{inventory_hostname}}.txt"
