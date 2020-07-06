@@ -1,5 +1,5 @@
 ---
-- hosts: Default_inventory
+- hosts: NetworkDevice
   remote_user: ppinstaller
   tasks:
     - name: test connection
