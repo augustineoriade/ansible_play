@@ -1,5 +1,5 @@
 ---
-- hosts: 100.120.2.15
+- hosts: acc-1-idf1-pse1
   remote_user: ppinstaller
   tasks:
     - name: test connection
