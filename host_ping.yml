@@ -1,7 +1,5 @@
 ---
-- hosts: acc-1-idf1-pse1
-  remote_user: ppinstaller
+- hosts: all
   tasks:
     - name: test connection
       ping:
-      remote_user: ppinstaller
